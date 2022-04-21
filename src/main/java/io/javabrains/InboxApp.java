@@ -22,8 +22,8 @@ import java.nio.file.Path;
 @ConfigurationPropertiesScan
 public class InboxApp {
 
-//	@Autowired
-//	FolderRepository folderRepository;
+	@Autowired
+	FolderRepository folderRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(InboxApp.class, args);
@@ -40,13 +40,13 @@ public class InboxApp {
 		return builder -> builder.withCloudSecureConnectBundle(bundle);
 	}
 
-//	@PostConstruct
-//	public void init(){
-//
-//		folderRepository.save(new Folder("dkzy", "Inbox","blue"));
-//		folderRepository.save(new Folder("dkzy", "Sent","green"));
-//		folderRepository.save(new Folder("dkzy", "Important","yellow"));
-//
-//	}
+	@PostConstruct
+	public void init(){
+
+		folderRepository.save(new Folder("dkzy", "Inbox","blue"));
+		folderRepository.save(new Folder("dkzy", "Sent","green"));
+		folderRepository.save(new Folder("dkzy", "Important","yellow"));
+
+	}
 
 }

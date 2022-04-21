@@ -11,5 +11,9 @@
 </head>
 <body>
         <h1>Inbox</h1>
+
+        <div  th:each = "folder : ${userFolders}">
+            <p th: texts = "${folder.label}"></p>
+        </div>
 </body>
 </html>
